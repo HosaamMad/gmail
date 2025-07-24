@@ -12,7 +12,7 @@ templates = Jinja2Templates(directory="templates")
 SCOPES = ["https://www.googleapis.com/auth/photoslibrary.readonly"]
 REDIRECT_URI = "http://localhost:8000/callback"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CLIENT_SECRET_FILE = os.path.join(BASE_DIR, "client_secrets.json")
+CLIENT_SECRET_FILE = os.path.join(BASE_DIR, "CLIENT_SECRET_JSON")
 
 
 @app.get("/login")
