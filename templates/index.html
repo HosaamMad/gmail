@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>📸 مكتبة صورك</title>
+    <style>
+        body { font-family: sans-serif; direction: rtl; background: #f4f4f4; text-align: center; padding: 20px; }
+        h1 { color: #333; margin-bottom: 20px; }
+        img { margin: 20px; border-radius: 8px; max-width: 80%; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
+        p { font-size: 1rem; color: #444; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <h1>✅ صورك من Google Photos</h1>
+    {% if media_items %}
+        {% for item in media_items %}
+        <div>
+            <p>{{ item['filename'] }}</p>
+            <img src="{{ item['baseUrl'] }}=w800" alt="{{ item['filename'] }}">
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>📭 لا توجد صور متاحة أو لم يتم منح الصلاحية بنجاح.</p>
+    {% endif %}
+</body>
+</html>
